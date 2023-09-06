@@ -1,0 +1,240 @@
+/* Add global styles here */
+/* Reset default margin and padding for the entire page */
+/* @import url('https://fonts.googleapis.com/css?family=Pacifico|Poppins&display=swap'); */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .App {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Set a gradient background for the entire page */
+  body {
+    background: linear-gradient(to bottom, #4bd3e2, #ad79ab);
+    font-family: Arial, sans-serif;
+    color: #d60ac9; /* Default text color */
+    min-height: 100vh; /* Ensure a minimum height of the viewport */
+  display: flex; /* Enable flexbox layout */
+  flex-direction: column; /* Column layout to push footer to the bottom */
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #7a3030; /* Dark background for header */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 15px;
+    font-family: 'Pacifico', cursive; /* Unique font for header */
+    font-size: 28px;
+  }
+  
+  /* Search bar styles */
+  .search-bar {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .search-bar input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .search-bar button {
+    background-color: #ff6b6b; /* Red button color */
+    color: #fff; /* White text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-bar button:hover {
+    background-color: #ff5252; /* Darker red on hover */
+  }
+  
+  /* Movie list styles (grid layout) */
+  .movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center; /* Center align grid */
+    margin: 20px auto;
+    max-width: 1200px; /* Limit maximum width of the grid */
+    flex-grow: 1; /* Allow content to grow and push footer to the bottom */
+  }
+  
+  /* Movie card styles */
+  .movie-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie-card img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+  }
+  
+  .movie-card:hover img {
+    transform: scale(1.2);
+  }
+  
+  /* Movie info styles */
+  .movie-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+  }
+  
+  .movie-card:hover .movie-info {
+    transform: translateY(0);
+  }
+
+  /* Add these styles for the movie quotes marquee */
+.movie-quotes-marquee {
+    background-color: #038eff;;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    overflow: hidden; /* Hide overflowing content */
+  }
+  
+  .movie-quotes-marquee h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .marquee-container {
+    display: inline-block; /* Make it inline to fit the container */
+    white-space: nowrap;
+    animation: marquee 60s linear infinite alternate; /* Use 'alternate' to reverse direction at the end of each iteration */
+  }
+  
+  .marquee-item {
+    display: inline-block;
+    margin-right: 20px; /* Adjust spacing between quotes */
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Styles for different colors */
+  .quote-text {
+    color: #ff5722; /* Orange */
+  }
+  
+  .quote-movie {
+    color:#fff; /* Green */
+  }
+  
+  .quote-character {
+    color:#0cf414; /* Blue */
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    25%, 75% {
+      opacity: 1;
+    }
+  }
+  
+  
+  /* Footer styles */
+  footer {
+    background-color: #af1515; /* Dark background for footer */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Poppins', sans-serif; /* Unique font for footer */
+  }
+  .error--wrapper {
+    font-size: 48px;
+  }
+  .error404 {
+    color: red;
+  }
+/* Error message styles */
+.error-message {
+    color: red;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 768px) {
+    .movie-list {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+  
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 
